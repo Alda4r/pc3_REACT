@@ -23,10 +23,25 @@ function App() {
     obtenerUniversidades();
   }, []);
 
-  // Filtrar universidades según el término de búsqueda
+ 
   const universitadesFiltradas = universidades.filter((uni) =>
     uni.name.toLowerCase().includes(busqueda.toLowerCase())
   );
+
+
+  const recargarDatos = async () => {
+    setCargando(true);
+    setError(null);
+    try {
+      const respuesta = await axios.get('/api/universities');
+      setUniversidades(respuesta.data);
+      setCargando(false);
+    } catch (err) {
+      console.error('Error:', err);
+      setError(`Error al cargar las universidades: ${err.message}`);
+      setCargando(false);
+    }
+  };
 
   return (
     <div className="container">
@@ -44,13 +59,20 @@ function App() {
         
         {universidades.length > 0 && (
           <div>
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', alignItems: 'center' }}>
               <input
                 type="text"
                 placeholder="Buscar universidad por nombre..."
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
               />
+              <button 
+                onClick={recargarDatos} 
+                className="btn-recargar"
+                disabled={cargando}
+              >
+                {cargando ? 'Recargando...' : '🔄 Recargar'}
+              </button>
             </div>
             
             <h3>
