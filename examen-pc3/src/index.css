@@ -12,21 +12,21 @@ body {
 
 h1 {
   text-align: center;
-  color: #1e3a8a;
+  color: red;
   margin-bottom: 30px;
 }
 
 .pregunta {
   background-color: white;
   padding: 25px;
-  border-left: 6px solid #2563eb;
+  border-left: 6px solid red;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .pregunta h2 {
   margin-top: 0;
-  color: #2563eb;
+  color: black;
 }
 
 .pregunta p {
