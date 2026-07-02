@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f4f8;
+}
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.pregunta {
+  background-color: white;
+  padding: 25px;
+  border-left: 6px solid #2563eb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pregunta h2 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+.pregunta p {
+  color: #444;
+  line-height: 1.5;
+}
