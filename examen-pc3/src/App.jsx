@@ -71,7 +71,7 @@ function App() {
                 className="btn-recargar"
                 disabled={cargando}
               >
-                {cargando ? 'Recargando...' : '🔄 Recargar'}
+                {cargando ? 'Recargando...' : ' Recargar'}
               </button>
             </div>
             
